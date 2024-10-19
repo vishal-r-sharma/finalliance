@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= customerdata.name %> Accounts Details
+    </title>
+    <link rel="stylesheet" href="/customerDashCSS/customerAccounts.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+</head>
+
+<body>
+    <nav id="sidebar">
+        <ul>
+            <li>
+                <span class="logo"><img src="/Fin_AllianceLogo.png" alt="logo" height="50px" width="100%"></span>
+                <button onclick=toggleSidebar() id="toggle-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z" />
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <a href="/manager/<%= managerdata._id %>/dashboard/customer/<%= customerdata._id %>">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M520-640v-160q0-17 11.5-28.5T560-840h240q17 0 28.5 11.5T840-800v160q0 17-11.5 28.5T800-600H560q-17 0-28.5-11.5T520-640ZM120-480v-320q0-17 11.5-28.5T160-840h240q17 0 28.5 11.5T440-800v320q0 17-11.5 28.5T400-440H160q-17 0-28.5-11.5T120-480Zm400 320v-320q0-17 11.5-28.5T560-520h240q17 0 28.5 11.5T840-480v320q0 17-11.5 28.5T800-120H560q-17 0-28.5-11.5T520-160Zm-400 0v-160q0-17 11.5-28.5T160-360h240q17 0 28.5 11.5T440-320v160q0 17-11.5 28.5T400-120H160q-17 0-28.5-11.5T120-160Zm80-360h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z" />
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/manager/<%= managerdata._id %>/dashboard/customer/<%= customerdata._id %>/loans">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 512 512" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M240.1 4.2c9.8-5.6 21.9-5.6 31.8 0l171.8 98.1L448 104l0 .9 47.9 27.4c12.6 7.2 18.8 22 15.1 36s-16.4 23.8-30.9 23.8L32 192c-14.5 0-27.2-9.8-30.9-23.8s2.5-28.8 15.1-36L64 104.9l0-.9 4.4-1.6L240.1 4.2zM64 224l64 0 0 192 40 0 0-192 64 0 0 192 48 0 0-192 64 0 0 192 40 0 0-192 64 0 0 196.3c.6 .3 1.2 .7 1.8 1.1l48 32c11.7 7.8 17 22.4 12.9 35.9S494.1 512 480 512L32 512c-14.1 0-26.5-9.2-30.6-22.7s1.1-28.1 12.9-35.9l48-32c.6-.4 1.2-.7 1.8-1.1L64 224z" />
+                    </svg>
+                    <span>Loan Details</span>
+                </a>
+            </li>
+            <li>
+                <a href="/manager/<%= managerdata._id %>/dashboard/customer/<%= customerdata._id %>/transactions">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 512 512" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM151.2 217.4c-4.6 4.2-7.2 10.1-7.2 16.4c0 12.3 10 22.3 22.3 22.3l41.7 0 0 96c0 17.7 14.3 32 32 32l32 0c17.7 0 32-14.3 32-32l0-96 41.7 0c12.3 0 22.3-10 22.3-22.3c0-6.2-2.6-12.1-7.2-16.4l-91-84c-3.8-3.5-8.7-5.4-13.9-5.4s-10.1 1.9-13.9 5.4l-91 84z" />
+                    </svg>
+                    <span>Top Transactions</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="/manager/<%= managerdata._id %>/dashboard/customer/<%= customerdata._id %>/accounts">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 512 512" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M256 0l64 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32zM64 64l128 0 0 48c0 26.5 21.5 48 48 48l96 0c26.5 0 48-21.5 48-48l0-48 128 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 128C0 92.7 28.7 64 64 64zM176 437.3c0 5.9 4.8 10.7 10.7 10.7l202.7 0c5.9 0 10.7-4.8 10.7-10.7c0-29.5-23.9-53.3-53.3-53.3l-117.3 0c-29.5 0-53.3 23.9-53.3 53.3zM288 352a64 64 0 1 0 0-128 64 64 0 1 0 0 128z" />
+                    </svg>
+                    <span>Accounts</span>
+                </a>
+            </li>
+            <li>
+                <a onclick="window.print()" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 512 512" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M128 0C92.7 0 64 28.7 64 64l0 96 64 0 0-96 226.7 0L384 93.3l0 66.7 64 0 0-66.7c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0L128 0zM384 352l0 32 0 64-256 0 0-64 0-16 0-16 256 0zm64 32l32 0c17.7 0 32-14.3 32-32l0-96c0-35.3-28.7-64-64-64L64 192c-35.3 0-64 28.7-64 64l0 96c0 17.7 14.3 32 32 32l32 0 0 64c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-64zM432 248a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+                    </svg>
+                    <span>Print</span>
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 512 512" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" />
+                    </svg>
+                    <span>LogOut!</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container">
+            <h1 style="text-align: center;">Accounts Details</h1><br>
+            <p><b>Name:</b>
+                <%= customerdata.name %> <br> <b>Customer Id:</b>
+                    <%= customerdata.customerId %> <br><b>Checking Manager:</b>
+                        <%= managerdata.name %> | <%= managerdata.employeeId %> <br><b>Account Checking ID:</b> <%= accountdata._id %>
+            </p>
+            <p style="display:block; text-align: right;"><i>"<%= customerdata.name %>" has <%= accountdata.noofbank %> Accounts</i></p>
+            <% if (accountdata.noofbank === 1) { %>
+            <section id="one-account">
+                <div class="bank-box">
+                    <h3><%= accountdata.bank[0] %></h3>
+                    <p>
+                        <b>Account Status: 
+                            <% if (accountdata.accstatus[0] == "Active") { %> 
+                              <span style="color: green"><%= accountdata.accstatus[0] %></span><br> 
+                            <% } else { %> 
+                              <span style="color: red"><%= accountdata.accstatus[0] %></span><br> 
+                            <% } %>
+                            </b> 
+                        <b>Opening Date: </b><%= accountdata.opendate[0] %><br>
+                        <b>Account Type: </b><%= accountdata.accounttype[0] %><br>
+                        <b>Branch: </b><%= accountdata.branch[0] %><br>
+                        <b>Linked Services: </b><%= accountdata.linkservices %><br>
+
+                    </p>
+                </div>
+            </section>
+            <% }; %>
+            <% if (accountdata.noofbank === 2) { %>
+            <section id="two-account">
+                <div class="bank-box">
+                    <h3><%= accountdata.bank[0] %></h3>
+                    <p>
+                        <b>Account Status: 
+                            <% if (accountdata.accstatus[0] == "Active") { %> 
+                              <span style="color: green"><%= accountdata.accstatus[0] %></span><br> 
+                            <% } else { %> 
+                              <span style="color: red"><%= accountdata.accstatus[0] %></span><br> 
+                            <% } %>
+                            </b> 
+                        <b>Opening Date: </b><%= accountdata.opendate[0] %><br>
+                        <b>Account Type: </b><%= accountdata.accounttype[0] %><br>
+                        <b>Branch: </b><%= accountdata.branch[0] %><br>
+                        <b>Linked Services: </b><%= accountdata.linkservices %><br>
+
+                    </p>
+                </div>
+                <div class="bank-box">
+                    <h3><%= accountdata.bank[1] %></h3>
+                    <p>
+                        <b>Account Status: 
+                            <% if (accountdata.accstatus[1] == "Active") { %> 
+                              <span style="color: green"><%= accountdata.accstatus[1] %></span><br> 
+                            <% } else { %> 
+                              <span style="color: red"><%= accountdata.accstatus[1] %></span><br> 
+                            <% } %>
+                            </b> 
+                        <b>Opening Date: </b><%= accountdata.opendate[1] %><br>
+                        <b>Account Type: </b><%= accountdata.accounttype[1] %><br>
+                        <b>Branch: </b><%= accountdata.branch[1] %><br>
+                        <b>Linked Services: </b><%= accountdata.linkservices %><br>
+
+                    </p>
+                </div>
+            </section>
+            <% }; %>
+            
+            <% if (accountdata.noofbank === 3) { %>
+            <section id="three-account">
+                <div class="bank-box">
+                    <h3><%= accountdata.bank[0] %></h3>
+                    <p>
+                        <b>Account Status: 
+                            <% if (accountdata.accstatus[0] == "Active") { %> 
+                              <span style="color: green"><%= accountdata.accstatus[0] %></span><br> 
+                            <% } else { %> 
+                              <span style="color: red"><%= accountdata.accstatus[0] %></span><br> 
+                            <% } %>
+                            </b>                            
+                        <b>Opening Date: </b><%= accountdata.opendate[0] %><br>
+                        <b>Account Type: </b><%= accountdata.accounttype[0] %><br>
+                        <b>Branch: </b><%= accountdata.branch[0] %><br>
+                        <b>Linked Services: </b><%= accountdata.linkservices %><br>
+
+                    </p>
+                </div>
+                <div class="bank-box">
+                    <h3><%= accountdata.bank[1] %></h3>
+                    <p>
+                        <b>Account Status: 
+                            <% if (accountdata.accstatus[1] == "Active") { %> 
+                              <span style="color: green"><%= accountdata.accstatus[1] %></span><br> 
+                            <% } else { %> 
+                              <span style="color: red"><%= accountdata.accstatus[1] %></span><br> 
+                            <% } %>
+                            </b> 
+                        <b>Opening Date: </b><%= accountdata.opendate[1] %><br>
+                        <b>Account Type: </b><%= accountdata.accounttype[1] %><br>
+                        <b>Branch: </b><%= accountdata.branch[1] %><br>
+                        <b>Linked Services: </b><%= accountdata.linkservices %><br>
+
+                    </p>
+                </div>
+                <div class="bank-box">
+                    <h3><%= accountdata.bank[2] %></h3>
+                    <p>
+                        <b>Account Status: 
+                            <% if (accountdata.accstatus[2] == "Active") { %> 
+                              <span style="color: green"><%= accountdata.accstatus[2] %></span><br> 
+                            <% } else { %> 
+                              <span style="color: red"><%= accountdata.accstatus[2] %></span><br> 
+                            <% } %>
+                            </b> 
+                        <b>Opening Date: </b><%= accountdata.opendate[2] %><br>
+                        <b>Account Type: </b><%= accountdata.accounttype[2] %><br>
+                        <b>Branch: </b><%= accountdata.branch[2] %><br>
+                        <b>Linked Services: </b><%= accountdata.linkservices %><br>
+
+                    </p>
+                </div>
+            </section>
+            <% }; %>
+            <% if (accountdata.noofbank === 4) { %>
+            <section id="four-account">
+                <div class="bank-box">
+                    <h3><%= accountdata.bank[0] %></h3>
+                    <p>
+                        <b>Account Status: 
+                            <% if (accountdata.accstatus[0] == "Active") { %> 
+                              <span style="color: green"><%= accountdata.accstatus[0] %></span><br> 
+                            <% } else { %> 
+                              <span style="color: red"><%= accountdata.accstatus[0] %></span><br> 
+                            <% } %>
+                            </b> 
+                        <b>Opening Date: </b><%= accountdata.opendate[0] %><br>
+                        <b>Account Type: </b><%= accountdata.accounttype[0] %><br>
+                        <b>Branch: </b><%= accountdata.branch[0] %><br>
+                        <b>Linked Services: </b><%= accountdata.linkservices %><br>
+
+                    </p>
+                </div>
+                <div class="bank-box">
+                    <h3><%= accountdata.bank[1] %></h3>
+                    <p>
+                        <b>Account Status: 
+                            <% if (accountdata.accstatus[1] == "Active") { %> 
+                              <span style="color: green"><%= accountdata.accstatus[1] %></span><br> 
+                            <% } else { %> 
+                              <span style="color: red"><%= accountdata.accstatus[1] %></span><br> 
+                            <% } %>
+                            </b> 
+                        <b>Opening Date: </b><%= accountdata.opendate[1] %><br>
+                        <b>Account Type: </b><%= accountdata.accounttype[1] %><br>
+                        <b>Branch: </b><%= accountdata.branch[1] %><br>
+                        <b>Linked Services: </b><%= accountdata.linkservices %><br>
+
+                    </p>
+                </div>
+                <div class="bank-box">
+                    <h3><%= accountdata.bank[2] %></h3>
+                    <p>
+                        <b>Account Status: 
+                            <% if (accountdata.accstatus[2] == "Active") { %> 
+                              <span style="color: green"><%= accountdata.accstatus[2] %></span><br> 
+                            <% } else { %> 
+                              <span style="color: red"><%= accountdata.accstatus[2] %></span><br> 
+                            <% } %>
+                            </b> 
+                        <b>Opening Date: </b><%= accountdata.opendate[2] %><br>
+                        <b>Account Type: </b><%= accountdata.accounttype[2] %><br>
+                        <b>Branch: </b><%= accountdata.branch[2] %><br>
+                        <b>Linked Services: </b><%= accountdata.linkservices %><br>
+
+                    </p>
+                </div>
+                <div class="bank-box">
+                    <h3><%= accountdata.bank[3] %></h3>
+                    <p>
+                        <b>Account Status: 
+                            <% if (accountdata.accstatus[3] == "Active") { %> 
+                              <span style="color: green"><%= accountdata.accstatus[3] %></span><br> 
+                            <% } else { %> 
+                              <span style="color: red"><%= accountdata.accstatus[3] %></span><br> 
+                            <% } %>
+                            </b> 
+                        <b>Opening Date: </b><%= accountdata.opendate[3] %><br>
+                        <b>Account Type: </b><%= accountdata.accounttype[3] %><br>
+                        <b>Branch: </b><%= accountdata.branch[3] %><br>
+                        <b>Linked Services: </b><%= accountdata.linkservices %><br>
+                    </p>
+                </div>
+            </section>
+            <% }; %>
+
+
+        </div>
+        <p><b style="color: yellow;">Warning:</b> Misusing someone’s personal banking information is illegal. It can
+            result in severe penalties, including hefty fines and imprisonment. Every action is traceable, and law
+            enforcement takes fraud seriously. Think twice before committing a crime that can destroy lives, including
+            your own.</p>
+    </main>
+    <script>
+        //SideNav
+        const toggleButton = document.getElementById('toggle-btn')
+        const sidebar = document.getElementById('sidebar')
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('close')
+            toggleButton.classList.toggle('rotate')
+
+            closeAllSubMenus()
+        }
+
+        function toggleSubMenu(button) {
+
+            if (!button.nextElementSibling.classList.contains('show')) {
+                closeAllSubMenus()
+            }
+
+            button.nextElementSibling.classList.toggle('show')
+            button.classList.toggle('rotate')
+
+            if (sidebar.classList.contains('close')) {
+                sidebar.classList.toggle('close')
+                toggleButton.classList.toggle('rotate')
+            }
+        }
+
+        function closeAllSubMenus() {
+            Array.from(sidebar.getElementsByClassName('show')).forEach(ul => {
+                ul.classList.remove('show')
+                ul.previousElementSibling.classList.remove('rotate')
+            })
+        }
+    </script>
+</body>
+
+</html>
