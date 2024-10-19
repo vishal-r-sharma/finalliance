@@ -11,7 +11,7 @@ The **FinAlliance** portal provides a safe environment for managers to:
 - Print customer information directly from the web portal for record-keeping.
 
 ---
-**Project Preview**
+## **Project Preview**
 
 FinAlliance Intro: https://youtu.be/XkV_IAOVEAc
 
