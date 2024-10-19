@@ -85,16 +85,29 @@ npm start
 ```
 The application will be live at http://localhost:8080. You can access the login page and begin using the system.
 
-## **Routes Used in the Project**
+---
 
-Here’s a summary of the key routes available in the FinAlliance application:
+### **Use the Application**
 
-| Route                | HTTP Method | Description                                             |
-|----------------------|-------------|---------------------------------------------------------|
-| `/`                  | GET         | Renders the home page for login.                        |
-| `/login`             | POST        | Handles user authentication for bank managers.         |
-| `/dashboard`         | GET         | Displays the dashboard with customer banking information.|
-| `/customers`         | GET         | Retrieves and displays all customer records.            |
-| `/customers/:id`     | GET         | Displays detailed information for a specific customer.  |
-| `/customers/print/:id`| GET        | Generates a printable version of customer details.      |
-| `/logout`            | GET         | Logs the user out of the application.                   |
+Once your application is running, follow these steps to use FinAlliance:
+
+1. **Open Your Browser**: Go to [http://localhost:5000](http://localhost:5000).
+
+2. **Login**: 
+   - Enter your bank manager credentials (username and password) to log in.
+
+3. **Access the Dashboard**: 
+   - After logging in, you'll be taken to the dashboard, where you can see a summary of manager information.
+
+4. **Search for Customers**: 
+   - To view customer details, enter the PAN or Aadhar number in the search bar.
+
+5. **View Customer Information**: 
+   - Click on a customer’s name to see detailed information, including loans, CIBIL score, and recent transactions.
+
+6. **Print Customer Details**: 
+   - If you need a hard copy of the customer’s information, click the print button to generate a printable version.
+
+7. **Logout**: 
+   - When you're done, don’t forget to log out by clicking the logout link.
+
