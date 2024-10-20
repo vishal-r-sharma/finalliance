@@ -93,7 +93,7 @@ The application will be live at http://localhost:8080. You can access the login 
 
 Once your application is running, follow these steps to use FinAlliance:
 
-1. **Open Your Browser**: Go to [http://localhost:5000](http://localhost:5000).
+1. **Open Your Browser**: Go to [http://localhost:8080](http://localhost:8080).
 
 2. **Login**: 
    - Enter your bank manager credentials (username and password) to log in.
