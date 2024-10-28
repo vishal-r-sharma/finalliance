@@ -502,4 +502,3 @@ app.get("/manager/:id/dashboard/customer/:customerId/transactions", async (req, 
 //   .catch((err) => {
 //     console.log("Error finding document(s):", err);
 //   });
-//
