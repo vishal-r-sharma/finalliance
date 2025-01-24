@@ -13,6 +13,9 @@ The **FinAlliance** portal provides a safe environment for managers to:
 ---
 ## **Project Preview**
 
+![FinAlliance Demo](finalliance%20gif.gif)
+
+
 FinAlliance Demo: https://vishalsharmadev.in/finalliance/
 
 FinAlliance Intro: https://youtu.be/XkV_IAOVEAc
